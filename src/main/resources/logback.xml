@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="1000 seconds">
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder charset="UTF-8">
+            <Pattern>%boldMagenta(%d{yyyy-MM-dd HH:mm:ss.SSS}) %boldYellow(【%thread %-5level】) %boldGreen(【${PID:- }】)  %boldGreen(%logger{36}) %boldCyan(-【%X{traceId}】-) %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.boot.vue" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="stdout"/>
+    </logger>
+    <root level="info">
+        <appender-ref ref="stdout"/>
+    </root>
+</configuration>
